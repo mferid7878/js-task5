@@ -1,4 +1,4 @@
-Task1
+// Task1
 
 function modifyText(text, callback) {
  return callback(text);
@@ -19,48 +19,46 @@ function removeSpaces(text) {
 }
 
 function capitalizeWords(text) { 
-result 
-}
+    let newText = text.split(" ");
+    for (let i = 0; i < newText.length; i++) {
+    newText[i] = newText[i][0].toUpperCase() + newText[i].slice(1);
+    }
+    return newText.join(" ");
+} 
+//  gpt mehsulu
 
-function addendext (text){
+function addenText (text){
     return text + "!";
 } 
 
+// Task2
 
-Task2
 function modifyText(num, callback) {
   return callback(num);
 }
 
-function multiply2(num){ 
+function multiplyTwo(num){ 
     return num*2
 }
 
-function divide2(num){ 
+function divideTwo(num){ 
     return num/2
 }
-function kvadratkok(num){
+
+function kvadratKok(num){
    if (num > 0) {
        return num ** 0.5
    }
    else {
     return "adam kimi eded ver"
    }
-
 }
 
-function module(num){ 
-    if (num < 0) {
-        return num * -1
-    }
-    else {
-        return num
-    }
+function makeNegative(num) {
+    return num > 0 ? -num : num;
 }
 
-console.log(modifyText(9, kvadratkok)); 
-
-Task3
+// Task3
 
 function transformArray(array, callback)
 {
@@ -75,7 +73,7 @@ function addOne(num) {
     return num + 1;
 }
 
-function makenegetive(num) {
+function makeNegetive(num) {
     if (num > 0) {
         return num * -1
     }
@@ -83,19 +81,18 @@ function makenegetive(num) {
         return num
     }
 }
-function find3remainder(num){
-    let result = [];
 
- 
-
+function divideBythree(num){
+    if (num % 3 === 0)
+    {
+        return 0;
+    }
+    else{
+        return num % 3;
+    } 
 }
 
-
-
-
-
-
-Task4
+// Task4
 
 function findInArray(array, callback) {
     for (let i = 0; i < array.length; i++) {
@@ -106,15 +103,15 @@ function findInArray(array, callback) {
     return "Nothing found";
 }
 
-function firsteven(num) {
+function firstEven(num) {
     return num % 2 === 0;
 }
 
-function firstbiggerthan10(num){
+function firstBiggerthan10(num){
     return num > 10;
 }
  
-function firststartwithA(text){
+function firstStartwithA(text){
     if (text[0] === 'A' || text[0] === 'a') {
         return text;  
       }
@@ -122,4 +119,36 @@ function firststartwithA(text){
           return null;
       }
 }
-console.log (findInArray([ ferid, kamil,akif, Amil ], firststartwithA));
+
+// Task5
+
+function processUserData(user, callback) {
+    return callback(user);
+}
+
+function fullName(user) {
+    return firstName + " " + lastName;
+}
+
+function ageTest(user){
+    if (user.age>=18){
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+ function hideEmail(user){
+    let emailParts = user.email.split("@");
+    return "*****"+"@"+emailParts[1];
+ }
+
+let user = {
+    firstName: "Elovset",
+    lastName: "Rafiqov",
+    age: 20,
+    email: "elik@gmail.com"
+};
+
+console.log(processUserData(user,hideEmail));
